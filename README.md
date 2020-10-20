@@ -10,15 +10,28 @@ git clone https://github.com/jefffang19/django_training_viewer
 ```
 pip install -r requirements.txt
 ```
-3. migrate database (sqlite)
+3. generate django secret key
+```
+python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+```
+4. paste secret key in env_sample
+```
+KEY=(YOUR KEY HERE)
+```
+4. rename env_sample in training to .env
+```
+cd training
+mv env_sample .env
+```
+5. migrate database (sqlite)
 ```
 python manage.py migrate
 ```
-4. runserver
+6. runserver
 ```
 python manage.py runserver
 ```
-5. connect to ***"your_ip":8000/viewer***, if it shows hello world, then install success
+7. connect to ***"your_ip":8000/viewer***, if it shows hello world, then install success
 
 
 ## Urls
