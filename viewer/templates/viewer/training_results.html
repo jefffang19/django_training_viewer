@@ -13,7 +13,8 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">loss</th>
-          <th scope="col">acc</th>
+          <th scope="col">training acc</th>
+            <th scope="col">valid acc</th>
         </tr>
       </thead>
       <tbody>
@@ -21,7 +22,8 @@
         <tr>
           <th scope="row">{{ forloop.counter }}</th>
           <td>{{ i.loss }}</td>
-          <td>{{ i.acc }}</td>
+          <td>{{ i.tr_acc }}</td>
+            <td>{{ i.val_acc }}</td>
         </tr>
       {% endfor %}
       </tbody>

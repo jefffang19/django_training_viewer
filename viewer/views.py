@@ -13,7 +13,7 @@ def index(request):
 @csrf_exempt
 def send_training(request):
     if request.method == 'POST':
-        d = Data(loss=request.POST['loss'], acc=request.POST['acc'])
+        d = Data(loss=request.POST['loss'], tr_acc=request.POST['tr_acc'], val_acc=request.POST['val_acc'])
         d.save()
         return HttpResponse()
     else:
@@ -24,7 +24,7 @@ def get_training(request):
 
     result = []
     for i in d:
-        result.append({'loss':i.loss, 'acc':i.acc})
+        result.append({'loss':i.loss, 'tr_acc':i.tr_acc, 'val_acc':i.val_acc})
 
     # return JsonResponse({'loss': loss, 'acc': acc})
     context = {'result':result}
