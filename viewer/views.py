@@ -34,3 +34,6 @@ def del_everything(request):
     Data.objects.all().delete()
 
     return HttpResponse()
+
+def view_loss(request):
+    return render(request, 'viewer/view_loss.html')
