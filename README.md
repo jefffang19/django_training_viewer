@@ -55,3 +55,6 @@ r = requests.post('http://(django_ip):8000/viewer/send_training', data = {'loss'
 (GET) `/viewer/del_everything`<br>
 delete the current data in database<br>
 use to reset current table
+
+(GET) `/viewer/view_acc`<br>
+(GET) `/viewer/view_loss`<br>
