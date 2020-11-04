@@ -36,4 +36,7 @@ def del_everything(request):
     return HttpResponse()
 
 def view_loss(request):
-    return render(request, 'viewer/view_loss.html')
+    d = ata.objects.all()
+    losses = [i.loss for i in d]
+    return_dict = { 'epoches' : len(losses), 'losses' : losses}
+    return render(request, 'viewer/view_loss.html', return_dict)
